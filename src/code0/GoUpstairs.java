@@ -13,25 +13,17 @@ public class GoUpstairs {
         System.out.println(countWays(3));
     }
 
-    static int sum = 0;
 
     public int countWays(int n){
-        findWays(n);
-        return sum;
+        int array[] = new int[100];
+        array[0] = 0;
+        array[1] = 1;
+        array[2] = 1;
+        array[3] = 2;
+        for(int i=4; i<=n; i++){
+            array[i] = (array[i-1]+array[i-2])%1000000007;
+        }
+        return array[n];
     }
 
-    public void findWays(int n){
-        if(n==3 || n==2){
-            sum += 2;
-            return;
-        }
-        if(n-1 >= 0){
-            sum++;
-            findWays(n-1);
-        }
-        if(n-2 >= 0){
-            sum++;
-            findWays(n-2);
-        }
-    }
 }
