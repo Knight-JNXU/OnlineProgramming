@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
  * Created by Knigh on 2016/10/11.
+ * 思路：邻接矩阵
  * http://www.nowcoder.com/practice/d311403b15b8495b81b622edaefd5b5a?tpId=49&tqId=29312&rp=3&ru=/ta/2016test&qru=/ta/2016test/question-ranking
  */
 class AnswerTable{
