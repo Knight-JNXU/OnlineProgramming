@@ -20,12 +20,15 @@ public class RealEyes {
         while (sc.hasNext()){
             String inputStr = sc.nextLine();
             int n = Integer.parseInt(inputStr);
-            int maxID = 1000000;
-            int answer[][] = new int[maxID][maxID];
             List<AnswerTable> list = new ArrayList<>();
+            String inputs[] = new String[n];
             for(int t=0; t<n; t++){
-                inputStr = sc.nextLine();
-                String strs[] = inputStr.split(" ");
+                inputs[t] = sc.nextLine();
+            }
+            int maxID = Integer.parseInt(inputs[n-1].split(" ")[0])+1;
+            int answer[][] = new int[maxID][maxID];
+            for(int t=0; t<n; t++){
+                String strs[] = inputs[t].split(" ");
                 AnswerTable temp = new AnswerTable();
                 temp.askID = Integer.parseInt(strs[0]);
                 temp.answerNum = Integer.parseInt(strs[1]);
@@ -45,7 +48,7 @@ public class RealEyes {
             int cheatCoupleIndex = 0;
             for(int i=0; i<maxID; i++){
                 for(int j=0; j<maxID; j++){
-                    if(answer[i][j]==1 && answer[j][i]==1){
+                    if(i!=j && answer[i][j]==1 && answer[j][i]==1){
                         cheatCouple[cheatCoupleIndex][0] = i;
                         cheatCouple[cheatCoupleIndex][1] = j;
                         cheatCoupleIndex++;
@@ -66,6 +69,7 @@ public class RealEyes {
                     }
                 }
             }
+            System.out.println(cheatPersonIndex);
             for(int i=0; i<maxID; i++){
                 if(cheatIDs[i] == 1){
                     System.out.print(i + " ");
