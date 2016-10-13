@@ -26,7 +26,7 @@ public class RealEyes {
             for(int t=0; t<n; t++){
                 inputs[t] = sc.nextLine();
             }
-            int maxID = Integer.parseInt(inputs[n-1].split(" ")[0])+1;
+            int maxID = Integer.parseInt(inputs[n-1].split(" ")[0])+1030;
             int answer[][] = new int[maxID][maxID];
             for(int t=0; t<n; t++){
                 String strs[] = inputs[t].split(" ");
