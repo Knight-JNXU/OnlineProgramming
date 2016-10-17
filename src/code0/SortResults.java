@@ -20,7 +20,7 @@ public class SortResults {
         }
     }
 
-    static class MyComparater implements Comparator<Student>{
+    private static class MyComparater implements Comparator<Student>{
         @Override
         public int compare(Student t1, Student t2) {
             if(t1.score > t2.score){
