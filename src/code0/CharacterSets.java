@@ -8,6 +8,7 @@ import java.util.Scanner;
  */
 public class CharacterSets {
     public static void main(String args[]){
+
         Scanner sc = new Scanner(System.in);
         while(sc.hasNext()){
             int letterArray[] = new int['z'-'A'+1];
