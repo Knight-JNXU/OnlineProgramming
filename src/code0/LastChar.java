@@ -3,7 +3,6 @@ package code0;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 /**
  * Created by Knight_JXNU on 2016/10/17. Main
