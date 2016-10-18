@@ -3,6 +3,7 @@ package code0;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,17 +19,11 @@ public class MaxDivision {
     }
 
     public int findMaxDivision(int[] A, int n) {
-        List<Integer> list = new ArrayList<>();
-        for(int item : A){
-            list.add(item);
-        }
-        Collections.sort(list);
-        int max = (list.get(1)-list.get(0));
-        int diff;
+        Arrays.sort(A);
+        int max = A[1]-A[0];
         for(int i=1; i<n-1; i++){
-            diff = (list.get(i+1)-list.get(i));
-            if(diff > max){
-                max = diff;
+            if(A[i+1]-A[i] > max){
+                max = A[i+1]-A[i];
             }
         }
         return max;
