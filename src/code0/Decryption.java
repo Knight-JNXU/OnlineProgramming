@@ -25,6 +25,7 @@ public class Decryption {
                 System.out.println(s);
             }
         }
+        sc.close();
     }
 
     public static void getTarget(StringBuffer sb, List<Character> list){
