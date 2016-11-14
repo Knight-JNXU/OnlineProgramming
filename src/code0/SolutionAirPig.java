@@ -20,22 +20,46 @@ public class SolutionAirPig {
 
     /**
      * 计算你能获得的最大收益
-     *
+     * 参考一个大神的算法
+     * 参考资料：http://www.nowcoder.com/questionTerminal/9370d298b8894f48b523931d40a9a4aa
+     * https://discuss.leetcode.com/topic/32288/2ms-java-dp-solution/2
      * @param prices Prices[i]即第i天的股价
      * @return 整型
      */
-    private static List<Integer> profits = new ArrayList<>();
     public int calculateMax(int[] prices) {
-        calculate(prices);
-        Collections.sort(profits);
-        int result = profits.get(profits.size()-1);
-        if(result < 0){
-            return 0;
-        }else{
-            return result;
+        int firstBuy = Integer.MIN_VALUE, firstSell = 0;
+        int secondBuy = Integer.MIN_VALUE, secondSell = 0;
+
+        for (int curPrice : prices) {
+            firstBuy = Math.max(firstBuy, -curPrice);
+            firstSell = Math.max(firstSell, firstBuy + curPrice);
+            secondBuy = Math.max(secondBuy,firstSell - curPrice);
+            secondSell = Math.max(secondSell, secondBuy + curPrice);
         }
+        return secondSell;
     }
 
+    private static List<Integer> profits = new ArrayList<>();
+//    public int calculateMax(int[] prices) {
+//        calculate(prices);
+//        Collections.sort(profits);
+//        int result = profits.get(profits.size()-1);
+//        if(result < 0){
+//            return 0;
+//        }else{
+//            return result;
+//        }
+//    }
+
+
+    public int[] arrCopy(int origin[], int start, int end){
+        int newArr[] = new int[end-start+1];
+        int p = 0;
+        for(int i=start; i<=end; i++){
+            newArr[p++] = origin[i];
+        }
+        return newArr;
+    }
 
     public void calculate(int[] prices){
         for(int i=0; i<prices.length-1; i++){
