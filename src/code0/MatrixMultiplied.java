@@ -44,7 +44,11 @@ public class MatrixMultiplied {
                 }
             }
             Collections.sort(list);
-            System.out.println(list.get(list.size()-1));
+            if(list.size()>0){
+                System.out.println(list.get(list.size()-1));
+            }else{
+                System.out.println(0);
+            }
         }
     }
 }
