@@ -32,7 +32,6 @@ public class ClockwisePrinter {
                     direction=down;
                     j--;
                 }
-                continue;
             }
             if(direction==down){
                 i++;
@@ -40,7 +39,6 @@ public class ClockwisePrinter {
                     direction=left;
                     i--;
                 }
-                continue;
             }
             if(direction==left){
                 j--;
@@ -48,7 +46,6 @@ public class ClockwisePrinter {
                     direction=up;
                     j++;
                 }
-                continue;
             }
             if(direction==up){
                 i--;
@@ -56,7 +53,6 @@ public class ClockwisePrinter {
                     direction=right;
                     i++;
                 }
-                continue;
             }
         }
         return arr;
